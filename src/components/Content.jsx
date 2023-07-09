@@ -1,16 +1,14 @@
-const Content = (props) => {
-  return (
-    <div>
-      <p>
-        {props.part1} {props.exercises1}
-      </p>
-      <p>
-        {props.part2} {props.exercises2}
-      </p>
-      <p>
-        {props.part3} {props.exercises3}
-      </p>
-    </div>
-  );
+import PartList from "./partList";
+import Part from "./part";
+
+const Content = () => {
+  const lists = PartList.map((list) => {
+    return (
+      <div key={list.id}>
+        <Part part={list.part} exercises={list.exercises} />
+      </div>
+    );
+  });
+  return lists;
 };
 export default Content;
