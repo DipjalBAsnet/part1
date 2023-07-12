@@ -1,7 +1,9 @@
 const Statistics = (props) => {
+  if (props.add === 0) {
+    return <div>No Feedback has given</div>;
+  }
   return (
     <div>
-      <h2>statistics</h2>
       <p>Good: {props.good}</p>
       <p>Neutral: {props.neutral}</p>
       <p>Bad: {props.bad}</p>
