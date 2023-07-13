@@ -4,21 +4,41 @@ const StatisticsLine = (props) => {
   }
   return (
     <div>
-      <p>Good: {props.good}</p>
-      <p>Neutral: {props.neutral}</p>
-      <p>Bad: {props.bad}</p>
-      <p>All: {props.add}</p>
-      <p>
-        Average:{" "}
-        {(props.good - props.bad) / (props.good + props.neutral + props.bad) ||
-          0}
-      </p>
-      <p>
-        Positive:{" "}
-        {(props.good + props.bad) / (props.good + props.neutral + props.bad) ||
-          0}
-        %
-      </p>
+      <table>
+        <tbody>
+          <tr>
+            <td>Good:</td>
+            <td>{props.good}</td>
+          </tr>
+          <tr>
+            <td>Neutral: </td>
+            <td>{props.neutral}</td>
+          </tr>
+          <tr>
+            <td>Bad: </td>
+            <td>{props.bad}</td>
+          </tr>
+          <tr>
+            <td>All: </td>
+            <td>{props.add}</td>
+          </tr>{" "}
+          <tr>
+            <td>Average: </td>
+            <td>
+              {(props.good - props.bad) /
+                (props.good + props.neutral + props.bad) || 0}
+            </td>
+          </tr>{" "}
+          <tr>
+            <td>Poistive: </td>
+            <td>
+              {(props.good + props.bad) /
+                (props.good + props.neutral + props.bad) || 0}{" "}
+              %
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   );
 };
