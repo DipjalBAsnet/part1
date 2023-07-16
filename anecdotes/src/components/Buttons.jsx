@@ -1,7 +1,8 @@
-const Button = ({ handleClick }) => {
+const Button = ({ handleSelectedClick, voteChange }) => {
   return (
     <div>
-      <button onClick={handleClick}>Next Anecdote</button>
+      <button onClick={handleSelectedClick}>Next Anecdote</button>
+      <button onClick={voteChange}>Vote</button>
     </div>
   );
 };
