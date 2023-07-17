@@ -26,6 +26,11 @@ const App = () => {
     updatedVote[selected]++;
     setVote(updatedVote);
   };
+  const displayMaxVote = () => {
+    let maxVote = Math.max(...vote);
+    let mostVotedIndex = vote.findIndex((votes) => votes === maxVote);
+    return anecdotes[mostVotedIndex];
+  };
 
   return (
     <div>
@@ -36,7 +41,9 @@ const App = () => {
       <h2>
         {anecdotes[selected]} <br />
       </h2>
-      <h1>Has {vote[selected]} Votes</h1>
+      <h1>Has {vote[selected]} Votes</h1> <br />
+      <h1>Anecdote With Most vote</h1>
+      <p>{displayMaxVote()}</p>
     </div>
   );
 };
